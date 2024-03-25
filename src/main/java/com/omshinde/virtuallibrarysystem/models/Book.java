@@ -64,12 +64,4 @@ public class Book {
         this.noOfCopies = noOfCopies;
     }
 
-    public static boolean isISBNUnique(String ISBN, List<Book> existingBooks) {
-        for (Book book : existingBooks) {
-            if (book.getISBN().equals(ISBN)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
