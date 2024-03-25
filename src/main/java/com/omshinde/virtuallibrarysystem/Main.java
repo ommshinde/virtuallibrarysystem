@@ -1,5 +1,6 @@
 package com.omshinde.virtuallibrarysystem;
 
+import com.omshinde.virtuallibrarysystem.admin.TransactionLog;
 import com.omshinde.virtuallibrarysystem.models.Book;
 import com.omshinde.virtuallibrarysystem.models.Borrow;
 import com.omshinde.virtuallibrarysystem.models.Library;
@@ -23,6 +24,9 @@ public class Main {
 
         Borrow b=new Borrow(library);
         b.borrowByISBN();
+
+        TransactionLog.displayTransactionLog();
+
 
     }
 }

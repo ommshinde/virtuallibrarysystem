@@ -3,9 +3,7 @@ import com.omshinde.virtuallibrarysystem.models.Book;
 
 import com.omshinde.virtuallibrarysystem.models.Book;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 
 public class TransactionLog {
@@ -19,6 +17,16 @@ public class TransactionLog {
             writer.write(logMessage);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    public static void displayTransactionLog() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(LOG_FILE_PATH))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading the transaction log: " + e.getMessage());
         }
     }
 }
