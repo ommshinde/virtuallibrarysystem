@@ -1,5 +1,5 @@
 package com.omshinde.virtuallibrarysystem.models;
-import com.omshinde.virtuallibrarysystem.models.Library;
+import com.omshinde.virtuallibrarysystem.admin.TransactionLog;
 
 import java.util.Scanner;
 
@@ -26,6 +26,8 @@ public class Borrow {
                 if(book.getNoOfCopies()>=1) {
                     System.out.println(book.getTitle() + " Book Borrowed ✅ ");
                     book.setNoOfCopies(book.getNoOfCopies() - 1);
+                    TransactionLog.logTransaction(book, "exampleUserID");
+
                 }else{
                     System.err.println("Book out of Stock");
                 }

@@ -13,7 +13,7 @@ public class Main {
         Library library=new Library();
 
 
-        library.addBook(new Book("Iron Man", "Tony Stark","99898","Fiction", LocalDate.of(2002,8,15), 0));
+        library.addBook(new Book("Iron Man", "Tony Stark","99898","Fiction", LocalDate.of(2002,8,15), 10));
         library.addBook(new Book("Iron Man", "Tony Stark","9998","Fiction", LocalDate.of(2004,8,15), 150));
 
 //        Scanner sc = new Scanner(System.in);
