@@ -1,18 +1,17 @@
 package com.omshinde.virtuallibrarysystem.models;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
-public class readBook {
+public class ReadBook {
     private Library library;
 
     String filepath, next;
     String[] data;
-    public readBook(Library library){
+    public ReadBook(Library library){
         this.library=library;
     }
 
@@ -39,7 +38,7 @@ public class readBook {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error reading the file: " + e.getMessage());
         }
     }
 }
