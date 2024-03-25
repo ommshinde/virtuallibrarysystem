@@ -55,5 +55,26 @@ public class ShowBooks {
         System.out.println("Availability: " + (book.getNoOfCopies() > 0 ? "Available" : "Out of Stock"));
     }
 
+    public void borrowbyISBN(){
+        System.out.println("Enter ISBN : ");
+        String userISBN= scanner.nextLine();
+
+        Book book=library.bookList.getOrDefault(userISBN,null);
+
+        if(book==null){
+            System.out.println("No book found for "+userISBN+" ISBN");
+        }else{
+            System.out.println("Title : "+book.getTitle());
+            System.out.println("Do you want to borrow the Book? [s/n] : ");
+            String choice=scanner.nextLine();
+
+            if(choice.equals("s")){
+                System.out.println(book.getTitle()+" Book Borrowed ✅ ");
+            }else{
+                System.err.println("Borrow Canceled");
+            }
+
+        }
+    }
 
 }
