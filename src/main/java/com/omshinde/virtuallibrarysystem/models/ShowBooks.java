@@ -55,9 +55,9 @@ public class ShowBooks {
         System.out.println("Availability: " + (book.getNoOfCopies() > 0 ? "Available" : "Out of Stock"));
     }
 
-    public void borrowbyISBN(){
+    public void borrowByISBN(){
         System.out.println("Enter ISBN : ");
-        String userISBN= scanner.nextLine();
+        String userISBN= scanner.nextLine().trim();
 
         Book book=library.bookList.getOrDefault(userISBN,null);
 
@@ -66,12 +66,19 @@ public class ShowBooks {
         }else{
             System.out.println("Title : "+book.getTitle());
             System.out.println("Do you want to borrow the Book? [s/n] : ");
-            String choice=scanner.nextLine();
+            String choice=scanner.nextLine().trim().toLowerCase();
 
             if(choice.equals("s")){
-                System.out.println(book.getTitle()+" Book Borrowed ✅ ");
+                if(book.getNoOfCopies()>=1) {
+                    System.out.println(book.getTitle() + " Book Borrowed ✅ ");
+                    book.setNoOfCopies(book.getNoOfCopies() - 1);
+                }else{
+                    System.err.println("Book out of Stock");
+                }
+            }else if (choice.equals("n")){
+                System.out.println("Borrow Canceled ");
             }else{
-                System.err.println("Borrow Canceled");
+                System.out.println("Invalid Input.");
             }
 
         }

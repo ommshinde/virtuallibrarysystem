@@ -18,7 +18,7 @@ public class Main {
 //        String search=sc.nextLine();
         ShowBooks sb=new ShowBooks(library);
 //        sb.searchBook("iron man");
-        sb.borrowbyISBN();
+        sb.borrowByISBN();
 
     }
 }
