@@ -1,7 +1,6 @@
 package com.omshinde.virtuallibrarysystem.models;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Book {
     private String title, author, ISBN, genre;
@@ -16,6 +15,13 @@ public class Book {
         this.publicationDate=publicationDate;
         this.noOfCopies=noOfCopies;
     }
+//    public Book(String title, String author, String ISBN, String genre, LocalDate publicationDate){
+//        this(title, author, ISBN, genre, publicationDate, 100);
+//    }
+//
+//    public Book(String title, String author, String ISBN, String genre){
+//        this(title, author, ISBN, genre, LocalDate.now(), 100);
+//    }
     public String getTitle(){
         return title;
     }
