@@ -19,7 +19,7 @@ public class Book {
         return title;
     }
 
-    public void setTitle(){
+    public void setTitle(String title){
         this.title=title;
     }
 
@@ -47,7 +47,7 @@ public class Book {
         this.genre = genre;
     }
 
-    public LocalDate getpublicationDate() {
+    public LocalDate getPublicationDate() {
         return publicationDate;
     }
 
