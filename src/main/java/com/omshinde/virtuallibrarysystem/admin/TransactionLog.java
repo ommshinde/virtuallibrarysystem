@@ -1,22 +1,23 @@
 package com.omshinde.virtuallibrarysystem.admin;
 import com.omshinde.virtuallibrarysystem.models.Book;
-
-import com.omshinde.virtuallibrarysystem.models.Book;
-
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
 public class TransactionLog {
     private static final String LOG_FILE_PATH = "src/main/java/com/omshinde/virtuallibrarysystem/resources/log.txt";
 
     public static void logTransaction(Book book, String userID) {
-        String logMessage = String.format("User %s borrowed book with ISBN %s on %s%n",
-                userID, book.getISBN(), LocalDate.now());
+        LocalDateTime borrowTimeandDate=LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
+        String logMessage = String.format("User %s borrowed book with ISBN %s on %s at %s%n",
+                userID, book.getISBN(), LocalDate.now(), borrowTimeandDate.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(LOG_FILE_PATH, true))) {
             writer.write(logMessage);
         } catch (IOException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
     }
     public static void displayTransactionLog() {

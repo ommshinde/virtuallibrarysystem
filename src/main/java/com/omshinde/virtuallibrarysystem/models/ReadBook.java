@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 public class ReadBook {
     private Library library;
-
     String filepath, next;
     String[] data;
     public ReadBook(Library library){
