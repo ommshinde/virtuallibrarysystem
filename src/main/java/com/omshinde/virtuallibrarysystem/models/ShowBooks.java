@@ -52,7 +52,7 @@ public class ShowBooks {
         System.out.println("Genre: " + book.getGenre());
         System.out.println("Publication Date: " + book.getPublicationDate());
         System.out.println("Number of Copies: " + book.getNoOfCopies());
-        if (book.getNoOfCopies() == 0) {
+        if (!book.isInStock()) {
             System.out.println("Availability: Out of Stock");
         } else {
             System.out.println("Availability: Available");

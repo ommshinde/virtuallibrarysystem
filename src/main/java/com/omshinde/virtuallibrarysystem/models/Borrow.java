@@ -23,11 +23,10 @@ public class Borrow {
             String choice = scanner.nextLine().trim().toLowerCase();
 
             if (choice.equals("s")) {
-                if (book.getNoOfCopies() >= 1) {
+                if (book.borrowBook()) {
                     System.out.println(book.getTitle() + " Book Borrowed ✅ ");
                     book.setNoOfCopies(book.getNoOfCopies() - 1);
                     TransactionLog.logTransaction(book, "exampleUserID");
-
                 } else {
                     System.err.println("Book out of Stock");
                 }

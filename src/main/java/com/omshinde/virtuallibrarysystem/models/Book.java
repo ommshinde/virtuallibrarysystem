@@ -70,4 +70,15 @@ public class Book {
         this.noOfCopies = noOfCopies;
     }
 
+    public boolean borrowBook() {
+        if (this.noOfCopies > 0) {
+            this.noOfCopies--;
+            return true;
+        }
+        return false;
+    }
+    public boolean isInStock() {
+        return this.noOfCopies > 0;
+    }
+
 }
