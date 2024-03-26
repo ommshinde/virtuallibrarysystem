@@ -17,7 +17,7 @@ public class Borrow {
 
         if(book==null){
             System.out.println("No book found for "+userISBN+" ISBN");
-        }else if(book.getNoOfCopies()>0) {
+        }else if(book.isInStock()) {
             System.out.println("Title : " + book.getTitle());
             System.out.println("Do you want to borrow the Book? [s/n] : ");
             String choice = scanner.nextLine().trim().toLowerCase();
