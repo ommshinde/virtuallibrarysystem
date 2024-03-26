@@ -1,6 +1,5 @@
 package com.omshinde.virtuallibrarysystem.models;
 import com.omshinde.virtuallibrarysystem.admin.TransactionLog;
-
 import java.util.Scanner;
 
 public class Borrow {

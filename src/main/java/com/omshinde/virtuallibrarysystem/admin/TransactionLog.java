@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 public class TransactionLog {
     private static final String LOG_FILE_PATH = "src/main/java/com/omshinde/virtuallibrarysystem/resources/log.txt";
-
     public static void logTransaction(Book book, String userID) {
         LocalDateTime borrowTimeandDate=LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
         String logMessage = String.format("User %s borrowed book with ISBN %s on %s at %s%n",
@@ -31,3 +30,4 @@ public class TransactionLog {
         }
     }
 }
+
